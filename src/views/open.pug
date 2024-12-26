@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title= 'JSArt - JavaScript for Web Artisans'
+    link(rel='stylesheet' type='text/css' href='/css/bulma.css')
+    link(rel='stylesheet' type="text/css" href='/css/style.css')
+  body
+    section(class='hero is-small is-dark')
+      div(class='hero-body')
+        div(class='container')
+          nav(class='level')
+            div(class='level-left')
+              div(class='level-item')
+                div
+                  p(class='title') JS
+                    span(class='is-italic') Art
+                  p(class='subtitle') JavaScript for Web Artisans
+            div(class='level-right')
+              div(class='level-item')
+                a(class='button is-dark subtitle' href='/index.html') Homepage
+              div(class='level-item')
+                a(class='button is-dark subtitle' href='/documentation.html') Documentation 
+              div(class='level-item')
+                a(class='button is-dark subtitle' href='/download.html') Download
+              div(class='level-item')
+                a(class='button is-dark subtitle' href='/donate.html') Donate
+    section(class='fillable' id='root')
+    block content

@@ -1,0 +1,59 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.title-level-1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.title-level-2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.title-level-3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.common-text {
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+.section-envelope {
+  padding: 2rem 0rem 0rem 0rem;
+}
+
+.envelope {
+  padding: 1rem 2rem 1rem 2rem;
+  margin: 0rem 0rem 1rem 0rem;
+  background-color: #eee;
+}
+
+.centered-text {
+  text-align: center !important;
+}
+
+.left-aligned-text {
+  text-align: left !important;
+}
+
+.right-aligned-text {
+  text-align: right !important;
+}
+
+.justified-text {
+  text-align: justify !important;
+}
+
+.italic-text  {
+  font-style: italic !important;
+}

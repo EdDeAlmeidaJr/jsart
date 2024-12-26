@@ -1,0 +1,47 @@
+extends open
+
+block content
+  div(class='hero is-medium')
+    div(class='hero-body')
+      div(class='container')
+        div(class='columns')
+          div(class='column is-6 centered-text')
+            p(class='title') All PHP frameworks sucks.
+            P(class='subtitle') Rasmus Lerdorf, creator of PHP language
+          div(class='column is-6 centered-text')
+            p(class='title') Forget PHP, Rasmus. All frameworks, for all languages, including JavaScript, sucks.
+            p(class='subtitle') Ed de Almeida, creator of JS
+              span(class='italic-text') Art
+  div(class='hero is-medium is-success')
+    div(class='hero-body')
+      div(class='container centered-text')
+        p(class='title') If you are looking for a framework, your place is NOT here! 
+        p(class='title') JS
+          span(class='italic-text') Art 
+          span is not a framework.
+        p(class='title') In fact, it is a collection of tools to avoid using frameworks. With it you may write great vanilla JavaScript stuff, for back-end and front-end, without using frameworks.
+        p(class='title') The best part of it is that you only have to care about your own programming issues, not spending time solving frameworks' issues.
+        p(class='title') If you ever tried to write ReactJS code avoiding repeated rendering of components, you know what I mean!
+  div(class='hero is-medium')
+    div(class='hero-body')
+      div(class='container')
+        table(class='table is-bordered is-stripped is-fullwidth')
+          thead(class='thead is-dark')
+            tr
+              th(class='centered-text title is-success' width='50%') JS
+                span(class='italic-text') Art 
+              th(class='centered-text title is-danger') Frameworks 
+          tbody 
+            tr 
+              td(class='centered-text subtitle') Smaller JavaScript bundles 
+              td(class='centered-text subtitle') Larger JavaScript bundles 
+            tr
+              td(class='centered-text subtitle') Pages are faster to load
+              td(class='centered-text subtitle') Pages are slower to load
+            tr 
+              td(class='centered-text subtitle') Only the complexity strictly required 
+              td(class='centered-text subtitle') Complexity increased by frameworks' issues
+            tr 
+              td(class='centered-text subtitle') JavaScript is all you need to know 
+              td(class='centered-text subtitle') You have to learn the frameworks' concepts and syntax
+  script(defer src='/js/index.js')

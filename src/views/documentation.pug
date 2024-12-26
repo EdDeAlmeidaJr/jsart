@@ -1,0 +1,31 @@
+extends open
+
+block content
+  div(class='container')
+    div(class='section-envelope')
+      div(class='envelope')
+        div(class='fullwidth title-level-3') addClassBehavior 
+        div(class='fullwidth common-text') Function addClassBehavior allows you to easily associate some property-function of your page code with a CSS class.
+      nav(class='level')
+        div(class='level-item')
+          button(class='button clickable', data-valor='1') Botão 1
+        div(class='level-item')
+          button(class='button clickable', data-valor='2') Botão 2
+        div(class='level-item')
+          button(class='button clickable', data-valor='3') Botão 3
+    div(class='section-envelope')
+      div(class='envelope')
+        div(class='fullwidth title-level-3') fillablePageAreas 
+        div(class='fullwidth common-text') Function fillablePageAreas creates an object with all DOM elements marked with the class 'fillable'. This object will be used to fill certain areas with content later, so we call this function automatically in each page object.
+      div(class='columns')
+        div(class='column is-4')
+          div(class='fillable notification is-success' id='firstdiv') This div is correctly created, with an ID attribute.
+        div(class='column is-4')
+          div(class='fillable notification is-danger') This div has no ID attribute and you'll be notified in your browser's dev console. 
+        div(class='column is-4')
+          div(class='fillable notification is-success' id='seconddiv') This div is correctly created, with an ID attribute.
+    div(class='section-envelope')
+      div(class='envelope')
+        div(class='fullwidth title-level-3') fillArea 
+        div(class='fullwidth common-text') Function fillArea fills a certain DOM element (caught with fillablePageAreas) with the results of a dynamic function.
+  script(defer src='/js/index.js')

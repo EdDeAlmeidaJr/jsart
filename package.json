@@ -1,0 +1,26 @@
+{
+  "name": "boilerplate",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build-dev": "./node_modules/webpack/bin/webpack.js --mode=development",
+    "build-prod": "./node_modules/webpack/bin/webpack.js --mode=production",
+    "start": "npm run build-prod && node ./bin/www",
+    "dev": "npm run build-dev && nodemon ./bin/www -e js,pug"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.4.7",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "mongoose": "^8.9.2",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
