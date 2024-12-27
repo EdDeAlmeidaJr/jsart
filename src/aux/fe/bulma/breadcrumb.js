@@ -1,10 +1,12 @@
+const consoleOutput = require('../../dev/consoleoutput');
+
 const bulmaBreadcrumb = (items) => {
   if (!items) {
-    console.error('**bulmaBreadcrumb** => the parameter items must be non-null.');
+    consoleOutput('error', null, '**bulmaBreadcrumb** => the parameter \'items\' must be non-null.');
     return null;
   }
-  if (typedef(items) !== 'Array') {
-    console.error('**bulmaBreadcrumb** => the parameter items must be of type array');
+  if (typeof items !== 'Array') {
+    consoleOutput('error', null, '**bulmaBreadcrumb** => the parameter \'items\' must be of type array');
     return null;
   }
   const bc = document.createElement('nav');
