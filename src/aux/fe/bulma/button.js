@@ -1,22 +1,24 @@
+const consoleOutput = require('../../dev/consoleoutput');
+
 const bulmaButton = (elem, text, classesArray) => {
   if (!elem) {
     elem = 'button';
   }
   const acceptedElems = ['a', 'button', 'input'];
   if (!acceptedElems.includes(elem)) {
-    console.error('\x1b[31m**bulmaButton** => the elem parameter must be \'a\', \'button\' or \'input\'.\x1b[37m');
+    consoleOutput('error', null, '**bulmaButton** => the elem parameter must be \'a\', \'button\' or \'input\'.');
     return null;
   }
   if (!text) {
-    console.error("\x1b[31m**bulmaButton** => the parameter \'text\' must be non-null.\x1b[37m");
+    consoleOutput('error', null, '**bulmaButton** => the parameter \'text\' must be non-null.');
     return null;
   }
   if (!classesArray) {
-    console.error("\x1b[31m**bulmaButton** => the parameter \'classesArray\' must be non-null.\x1b[37m");
+    consoleOutput('error', null, '**bulmaButton** => the parameter \'classesArray\' must be non-null.');
     return null;
   }
   if (typeof classesArray !== 'Array') {
-    console.error("\x1b[31m**bulmaButton** => the parameter \'classesArray\' must be of type Array.\x1b[37m");
+    consoleOutput('error',null,'**bulmaButton** => the parameter \'classesArray\' must be of type Array.');
     return null;
   }
   const btn = document.createElement(elem);
