@@ -1,3 +1,6 @@
+const bulmaBlock = require('./block');
+const bulmaBox = require('./box');
+const bulmaBreadcrumb = require('./breadcrumb');
 const bulmaButton = require('./button');
 const bulmaCard = require('./card');
 const bulmaColumn = require('./column');

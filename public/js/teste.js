@@ -9,13 +9,43 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/aux/fe/bulma/block.js":
+/*!***********************************!*\
+  !*** ./src/aux/fe/bulma/block.js ***!
+  \***********************************/
+/***/ ((module) => {
+
+eval("const bulmaBlock = (htmlContent) => {\n  if (!htmlContent) {\n    console.error('**bulmaBlock** => the \\'htmlContent\\' parameter must be non-null.');\n    return null;\n  }\n  let bl = document.createElement('div');\n  bl.setAttribute('class', 'block');\n  bl.appendChild(htmlContent);\n  return bl;\n}\n\nmodule.exports = bulmaBlock;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/block.js?");
+
+/***/ }),
+
+/***/ "./src/aux/fe/bulma/box.js":
+/*!*********************************!*\
+  !*** ./src/aux/fe/bulma/box.js ***!
+  \*********************************/
+/***/ ((module) => {
+
+eval("const bulmaBox = (elem, htmlContent) => {\n  if (!elem) {\n    elem = \"div\"\n  }\n  if (!htmlContent) {\n    console.error('**bulmaBox** => the \\'htmlContent\\' parameter must be non-null.');\n    return null;\n  }\n  let bx = document.createElement(elem);\n  bx.setAttribute('class','box');\n  bx.appendChild(htmlContent);\n  return bx;\n}\n\nmodule.exports = bulmaBox;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/box.js?");
+
+/***/ }),
+
+/***/ "./src/aux/fe/bulma/breadcrumb.js":
+/*!****************************************!*\
+  !*** ./src/aux/fe/bulma/breadcrumb.js ***!
+  \****************************************/
+/***/ ((module) => {
+
+eval("const bulmaBreadcrumb = (items) => {\n  if (!items) {\n    console.error('**bulmaBreadcrumb** => the parameter items must be non-null.');\n    return null;\n  }\n  if (typedef(items) !== 'Array') {\n    console.error('**bulmaBreadcrumb** => the parameter items must be of type array');\n    return null;\n  }\n  const bc = document.createElement('nav');\n  bc.setAttribute('class', 'breadcrumb');\n  bc.setAttribute('aria-label', 'breadcrumbs');\n  const ul = document.createElement('ul');\n  bc.appendChild(ul);\n  items.map(it => {\n    let li = document.createElement('li');\n    let a = document.createElement('a');\n    a.setAttribute('href', '#');\n    a.innerText = it;\n    li.appendChild(a);\n    ul.appendChild(li);\n  })\n  return bc;\n}\n\nmodule.exports = bulmaBreadcrumb;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/breadcrumb.js?");
+
+/***/ }),
+
 /***/ "./src/aux/fe/bulma/bulma.js":
 /*!***********************************!*\
   !*** ./src/aux/fe/bulma/bulma.js ***!
   \***********************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const bulmaButton = __webpack_require__(/*! ./button */ \"./src/aux/fe/bulma/button.js\");\nconst bulmaCard = __webpack_require__(/*! ./card */ \"./src/aux/fe/bulma/card.js\");\nconst bulmaColumn = __webpack_require__(/*! ./column */ \"./src/aux/fe/bulma/column.js\");\nconst bulmaContainer = __webpack_require__(/*! ./container */ \"./src/aux/fe/bulma/container.js\");\nconst bulmaHero = __webpack_require__(/*! ./hero */ \"./src/aux/fe/bulma/hero.js\");\nconst bulmaLevel = __webpack_require__(/*! ./level */ \"./src/aux/fe/bulma/level.js\");\nconst bulmaLevelItem = __webpack_require__(/*! ./levelitem */ \"./src/aux/fe/bulma/levelitem.js\");\nconst bulmaLevelLeft = __webpack_require__(/*! ./levelleft */ \"./src/aux/fe/bulma/levelleft.js\");\nconst bulmaLevelRight = __webpack_require__(/*! ./levelright */ \"./src/aux/fe/bulma/levelright.js\");\nconst bulmaNotification = __webpack_require__(/*! ./notification */ \"./src/aux/fe/bulma/notification.js\");\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/bulma.js?");
+eval("const bulmaBlock = __webpack_require__(/*! ./block */ \"./src/aux/fe/bulma/block.js\");\nconst bulmaBox = __webpack_require__(/*! ./box */ \"./src/aux/fe/bulma/box.js\");\nconst bulmaBreadcrumb = __webpack_require__(/*! ./breadcrumb */ \"./src/aux/fe/bulma/breadcrumb.js\");\nconst bulmaButton = __webpack_require__(/*! ./button */ \"./src/aux/fe/bulma/button.js\");\nconst bulmaCard = __webpack_require__(/*! ./card */ \"./src/aux/fe/bulma/card.js\");\nconst bulmaColumn = __webpack_require__(/*! ./column */ \"./src/aux/fe/bulma/column.js\");\nconst bulmaContainer = __webpack_require__(/*! ./container */ \"./src/aux/fe/bulma/container.js\");\nconst bulmaHero = __webpack_require__(/*! ./hero */ \"./src/aux/fe/bulma/hero.js\");\nconst bulmaLevel = __webpack_require__(/*! ./level */ \"./src/aux/fe/bulma/level.js\");\nconst bulmaLevelItem = __webpack_require__(/*! ./levelitem */ \"./src/aux/fe/bulma/levelitem.js\");\nconst bulmaLevelLeft = __webpack_require__(/*! ./levelleft */ \"./src/aux/fe/bulma/levelleft.js\");\nconst bulmaLevelRight = __webpack_require__(/*! ./levelright */ \"./src/aux/fe/bulma/levelright.js\");\nconst bulmaNotification = __webpack_require__(/*! ./notification */ \"./src/aux/fe/bulma/notification.js\");\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/bulma.js?");
 
 /***/ }),
 
@@ -25,7 +55,7 @@ eval("const bulmaButton = __webpack_require__(/*! ./button */ \"./src/aux/fe/bul
   \************************************/
 /***/ ((module) => {
 
-eval("const bulmaButton = (text, classesArray) => {\n  if (!text) {\n    console.error(\"**bulmaButton** => the parameter text must be non-null.\");\n    return null;\n  }\n  if (!classesArray) {\n    console.error(\"**bulmaButton** => the parameter classesArray must be non-null.\");\n    return null;\n  }\n  if (typeof classesArray !== 'Array') {\n    console.error(\"**bulmaButton** => the parameter classesArray must be of type Array.\");\n    return null;\n  }\n  if (classesArray.length === 0) {\n    console.error(\"**bulmaButton** => the parameter classesArray must have at least one element.\");\n    return null;\n  }\n  const btn = document.createElement('button');\n  btn.setAttribute('class', 'button')\n  classesArray.map(cl => {\n    btn.classList.add(`is-${cl}`);\n  })\n  btn.innerText = text;\n  return btn;\n}\n\nmodule.exports = bulmaButton;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/button.js?");
+eval("const bulmaButton = (elem, text, classesArray) => {\n  if (!elem) {\n    elem = 'button';\n  }\n  const acceptedElems = ['a', 'button', 'input'];\n  if (!acceptedElems.includes(elem)) {\n    console.error('\\x1b[31m**bulmaButton** => the elem parameter must be \\'a\\', \\'button\\' or \\'input\\'.\\x1b[37m');\n    return null;\n  }\n  if (!text) {\n    console.error(\"\\x1b[31m**bulmaButton** => the parameter \\'text\\' must be non-null.\\x1b[37m\");\n    return null;\n  }\n  if (!classesArray) {\n    console.error(\"\\x1b[31m**bulmaButton** => the parameter \\'classesArray\\' must be non-null.\\x1b[37m\");\n    return null;\n  }\n  if (typeof classesArray !== 'Array') {\n    console.error(\"\\x1b[31m**bulmaButton** => the parameter \\'classesArray\\' must be of type Array.\\x1b[37m\");\n    return null;\n  }\n  const btn = document.createElement(elem);\n  btn.setAttribute('class', 'button')\n  classesArray.map(cl => {\n    btn.classList.add(`is-${cl}`);\n  })\n  btn.innerText = text;\n  return btn;\n}\n\nmodule.exports = bulmaButton;\n\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/button.js?");
 
 /***/ }),
 

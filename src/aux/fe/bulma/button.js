@@ -1,21 +1,25 @@
-const bulmaButton = (text, classesArray) => {
+const bulmaButton = (elem, text, classesArray) => {
+  if (!elem) {
+    elem = 'button';
+  }
+  const acceptedElems = ['a', 'button', 'input'];
+  if (!acceptedElems.includes(elem)) {
+    console.error('\x1b[31m**bulmaButton** => the elem parameter must be \'a\', \'button\' or \'input\'.\x1b[37m');
+    return null;
+  }
   if (!text) {
-    console.error("**bulmaButton** => the parameter text must be non-null.");
+    console.error("\x1b[31m**bulmaButton** => the parameter \'text\' must be non-null.\x1b[37m");
     return null;
   }
   if (!classesArray) {
-    console.error("**bulmaButton** => the parameter classesArray must be non-null.");
+    console.error("\x1b[31m**bulmaButton** => the parameter \'classesArray\' must be non-null.\x1b[37m");
     return null;
   }
   if (typeof classesArray !== 'Array') {
-    console.error("**bulmaButton** => the parameter classesArray must be of type Array.");
+    console.error("\x1b[31m**bulmaButton** => the parameter \'classesArray\' must be of type Array.\x1b[37m");
     return null;
   }
-  if (classesArray.length === 0) {
-    console.error("**bulmaButton** => the parameter classesArray must have at least one element.");
-    return null;
-  }
-  const btn = document.createElement('button');
+  const btn = document.createElement(elem);
   btn.setAttribute('class', 'button')
   classesArray.map(cl => {
     btn.classList.add(`is-${cl}`);

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "test": "__TESTE__=true scripts/test.sh",
     "build-dev": "./node_modules/webpack/bin/webpack.js --mode=development",
     "build-prod": "./node_modules/webpack/bin/webpack.js --mode=production",
     "start": "npm run build-prod && node ./bin/www",
