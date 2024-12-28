@@ -63,9 +63,9 @@ eval("const consoleOutput = __webpack_require__(/*! ../../dev/consoleoutput */ \
 /*!***********************************!*\
   !*** ./src/aux/fe/bulma/bulma.js ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const bulmaBlock = __webpack_require__(/*! ./block */ \"./src/aux/fe/bulma/block.js\");\nconst bulmaBox = __webpack_require__(/*! ./box */ \"./src/aux/fe/bulma/box.js\");\nconst bulmaBreadcrumb = __webpack_require__(/*! ./breadcrumb */ \"./src/aux/fe/bulma/breadcrumb.js\");\nconst bulmaButton = __webpack_require__(/*! ./button */ \"./src/aux/fe/bulma/button.js\");\nconst bulmaCard = __webpack_require__(/*! ./card */ \"./src/aux/fe/bulma/card.js\");\nconst bulmaColumn = __webpack_require__(/*! ./column */ \"./src/aux/fe/bulma/column.js\");\nconst bulmaContainer = __webpack_require__(/*! ./container */ \"./src/aux/fe/bulma/container.js\");\nconst bulmaHero = __webpack_require__(/*! ./hero */ \"./src/aux/fe/bulma/hero.js\");\nconst bulmaLevel = __webpack_require__(/*! ./level */ \"./src/aux/fe/bulma/level.js\");\nconst bulmaLevelItem = __webpack_require__(/*! ./levelitem */ \"./src/aux/fe/bulma/levelitem.js\");\nconst bulmaLevelLeft = __webpack_require__(/*! ./levelleft */ \"./src/aux/fe/bulma/levelleft.js\");\nconst bulmaLevelRight = __webpack_require__(/*! ./levelright */ \"./src/aux/fe/bulma/levelright.js\");\nconst bulmaNotification = __webpack_require__(/*! ./notification */ \"./src/aux/fe/bulma/notification.js\");\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/bulma.js?");
+eval("const bulmaBlock = __webpack_require__(/*! ./block */ \"./src/aux/fe/bulma/block.js\");\nconst bulmaBox = __webpack_require__(/*! ./box */ \"./src/aux/fe/bulma/box.js\");\nconst bulmaBreadcrumb = __webpack_require__(/*! ./breadcrumb */ \"./src/aux/fe/bulma/breadcrumb.js\");\nconst bulmaButton = __webpack_require__(/*! ./button */ \"./src/aux/fe/bulma/button.js\");\nconst bulmaCard = __webpack_require__(/*! ./card */ \"./src/aux/fe/bulma/card.js\");\nconst bulmaColumns = __webpack_require__(/*! ./columns */ \"./src/aux/fe/bulma/columns.js\");\nconst bulmaColumn = __webpack_require__(/*! ./column */ \"./src/aux/fe/bulma/column.js\");\nconst bulmaContainer = __webpack_require__(/*! ./container */ \"./src/aux/fe/bulma/container.js\");\nconst bulmaHero = __webpack_require__(/*! ./hero */ \"./src/aux/fe/bulma/hero.js\");\nconst bulmaLevel = __webpack_require__(/*! ./level */ \"./src/aux/fe/bulma/level.js\");\nconst bulmaLevelItem = __webpack_require__(/*! ./levelitem */ \"./src/aux/fe/bulma/levelitem.js\");\nconst bulmaLevelLeft = __webpack_require__(/*! ./levelleft */ \"./src/aux/fe/bulma/levelleft.js\");\nconst bulmaLevelRight = __webpack_require__(/*! ./levelright */ \"./src/aux/fe/bulma/levelright.js\");\nconst bulmaNotification = __webpack_require__(/*! ./notification */ \"./src/aux/fe/bulma/notification.js\");\n\nmodule.exports = {\n  bulmaBlock, bulmaBox, bulmaBreadcrumb, bulmaButton, bulmaCard,\n  bulmaColumns, bulmaColumn, bulmaContainer, bulmaHero, bulmaLevel,\n  bulmaLevelItem, bulmaLevelLeft, bulmaLevelRight, bulmaNotification\n}\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/bulma.js?");
 
 /***/ }),
 
@@ -119,6 +119,16 @@ eval("const bulmaColumn = (size, htmlContent) => {\n  if (!htmlContent) {\n    c
 
 /***/ }),
 
+/***/ "./src/aux/fe/bulma/columns.js":
+/*!*************************************!*\
+  !*** ./src/aux/fe/bulma/columns.js ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const bulmaColumn = __webpack_require__(/*! ./column */ \"./src/aux/fe/bulma/column.js\");\n\nconst bulmaColumns = (sizesArray, contentsArray) => {\n  if (sizesArray.length !== contentsArray.length) {\n    console.error('**bulmaColumns** => parameters sizesArray and contentsArray should have the same length.');\n    return null;\n  }\n  const totalSize = 0;\n  sizesArray.map(el => totalSize += el);\n  if (totalSize > 12) {\n    console.error('**bulmaColumns** => the sum of the sizes in sizesArray parameter should not exceed 12.');\n    return null;\n  }\n  const columns = document.createElement('div');\n  columns.setAttribute('class', 'columns');\n  sizesArray.map((size, ind) => {\n    columns.appendChild(bulmaColumn(size, contentsArray[ind]));\n  })\n  return columns;\n}\n\nmodule.exports = bulmaColumns; \n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/columns.js?");
+
+/***/ }),
+
 /***/ "./src/aux/fe/bulma/container.js":
 /*!***************************************!*\
   !*** ./src/aux/fe/bulma/container.js ***!
@@ -135,7 +145,7 @@ eval("const bulmaContainer = (htmlcontent) => {\n  const cont = document.createE
   \**********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const consoleOutput = __webpack_require__(/*! ../../dev/consoleoutput */ \"./src/aux/dev/consoleoutput.js\");\n\nconst bulmaHero = (classesList, htmlContent) => {\n  if (!classesList) {\n    consoleOutput('error', null, '**bulmaHero** => the parameter \\'classesList\\' nust be non-null;');\n    return null;\n  }\n  if (typeof classesList !== 'Array') {\n    consoleOutput('error', null, '**bulmaHero** => the parameter \\'classesList\\' must be of type array.');\n    return null;\n  }\n  if (!htmlContent) {\n    consoleOutput('error', null, '**bulmaHero** => the parameter \\'htmlContent\\' nust be non-null;');\n    return null;\n  }\n  const hero = document.createElement('section');\n  hero.setAttribute('class', 'hero');\n  classesList.map(cl => {\n    hero.classList.add(`is-${cl}`);\n  })\n  const heroBody = document.createElement('div');\n  heroBody.setAttribute('class', 'hero-body');\n  heroBody.appendChild(htmlContent);\n  hero.appendChild(heroBody);\n  return hero;\n}\n\nmodule.exports = bulmaHero;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/hero.js?");
+eval("const consoleOutput = __webpack_require__(/*! ../../dev/consoleoutput */ \"./src/aux/dev/consoleoutput.js\");\n\nconst bulmaHero = (classesList, htmlContent) => {\n  if (!classesList) {\n    consoleOutput('error', null, '**bulmaHero** => the parameter \\'classesList\\' nust be non-null;');\n    return null;\n  }\n  if (!htmlContent) {\n    consoleOutput('error', null, '**bulmaHero** => the parameter \\'htmlContent\\' nust be non-null;');\n    return null;\n  }\n  const hero = document.createElement('section');\n  hero.setAttribute('class', 'hero');\n  classesList.map(cl => {\n    hero.classList.add(`is-${cl}`);\n  })\n  const heroBody = document.createElement('div');\n  heroBody.setAttribute('class', 'hero-body');\n  heroBody.appendChild(htmlContent);\n  hero.appendChild(heroBody);\n  return hero;\n}\n\nmodule.exports = bulmaHero;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/hero.js?");
 
 /***/ }),
 

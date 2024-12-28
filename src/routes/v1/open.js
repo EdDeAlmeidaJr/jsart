@@ -30,4 +30,9 @@ router.get('/teste.html', function(req, res, next) {
 	res.render('teste');
 });
 
+
+router.get('/pagina1.html', function(req, res, next) {
+	res.render('pagina1');
+});
+
 module.exports = router;

@@ -199,13 +199,13 @@ eval("const fillablePageAreas = () => {\n  const areas = document.getElementsByC
 
 /***/ }),
 
-/***/ "./src/behaviors/teste.js":
-/*!********************************!*\
-  !*** ./src/behaviors/teste.js ***!
-  \********************************/
+/***/ "./src/behaviors/pagina1.js":
+/*!**********************************!*\
+  !*** ./src/behaviors/pagina1.js ***!
+  \**********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const {\n\tbulmaHero,\n\tbulmaLevel\n} = __webpack_require__(/*! ../aux/fe/bulma/bulma */ \"./src/aux/fe/bulma/bulma.js\");\n\nconst fillablePageAreas = __webpack_require__(/*! ../aux/fe/fillablePageAreas */ \"./src/aux/fe/fillablePageAreas.js\");\n\nconst Teste = {\n\n\tpageAreas: fillablePageAreas(),\n\n\trun: function () {\n\t\tlet f1 = document.createElement()\n\t\tconst hero = bulmaHero(['medium'], document.createElement('h1'));\n\t\tconsole.log(this.pageAreas);\n\t\tthis.pageAreas.root.appendChild(hero);\n\t}\n\n}\n\nTeste.run();\n\nmodule.exports = Teste;\n\n\n//# sourceURL=webpack://boilerplate/./src/behaviors/teste.js?");
+eval("const bulma = __webpack_require__(/*! ../aux/fe/bulma/bulma */ \"./src/aux/fe/bulma/bulma.js\");\nconst fillablePageAreas = __webpack_require__(/*! ../aux/fe/fillablePageAreas */ \"./src/aux/fe/fillablePageAreas.js\");\n\nconst Pagina1 = {\n\n\tpageAreas: fillablePageAreas(),\n\n\trun: function () {\n\t\tconsole.log(this.pageAreas);\n\t}\n\n}\n\nPagina1.run();\n\nmodule.exports = Pagina1;\n\n\n//# sourceURL=webpack://boilerplate/./src/behaviors/pagina1.js?");
 
 /***/ })
 
@@ -240,7 +240,7 @@ eval("const {\n\tbulmaHero,\n\tbulmaLevel\n} = __webpack_require__(/*! ../aux/fe
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/behaviors/teste.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/behaviors/pagina1.js");
 /******/ 	
 /******/ })()
 ;

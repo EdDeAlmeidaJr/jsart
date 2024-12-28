@@ -5,10 +5,6 @@ const bulmaHero = (classesList, htmlContent) => {
     consoleOutput('error', null, '**bulmaHero** => the parameter \'classesList\' nust be non-null;');
     return null;
   }
-  if (typeof classesList !== 'Array') {
-    consoleOutput('error', null, '**bulmaHero** => the parameter \'classesList\' must be of type array.');
-    return null;
-  }
   if (!htmlContent) {
     consoleOutput('error', null, '**bulmaHero** => the parameter \'htmlContent\' nust be non-null;');
     return null;
