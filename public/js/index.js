@@ -9,6 +9,16 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/aux/dev/consoleoutput.js":
+/*!**************************************!*\
+  !*** ./src/aux/dev/consoleoutput.js ***!
+  \**************************************/
+/***/ ((module) => {
+
+eval("const consoleOutput = (tp, cl, msg) => {\n  const colors = {\n    'red': '\\x1b[31m',\n    'green': '\\x1b[32m',\n    'yellow': '\\x1b[33m',\n    'blue': '\\x1b[34m',\n    'magenta': '\\x1b[35m',\n    'cyan': '\\x1b[36m',\n    'white': '\\x1b[37m',\n    'reset': '\\x1b[0m'\n  }\n  switch (tp) {\n    case 'error': console.error(colors.red + msg + colors.reset);\n            break;\n    case 'log': console.log(colors[cl] + msg + colors.reset);\n            break;\n  }\n}\n\nmodule.exports = consoleOutput;\n\n//# sourceURL=webpack://boilerplate/./src/aux/dev/consoleoutput.js?");
+
+/***/ }),
+
 /***/ "./src/aux/fe/addClassBehavior.js":
 /*!****************************************!*\
   !*** ./src/aux/fe/addClassBehavior.js ***!
@@ -23,9 +33,9 @@ eval("const addClassBehavior = (cl, tp, fn) => {\n  const classElements = docume
 /*!***********************************!*\
   !*** ./src/aux/fe/bulma/block.js ***!
   \***********************************/
-/***/ ((module) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const bulmaBlock = (htmlContent) => {\n  if (!htmlContent) {\n    console.error('**bulmaBlock** => the \\'htmlContent\\' parameter must be non-null.');\n    return null;\n  }\n  let bl = document.createElement('div');\n  bl.setAttribute('class', 'block');\n  bl.appendChild(htmlContent);\n  return bl;\n}\n\nmodule.exports = bulmaBlock;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/block.js?");
+eval("const consoleOutput = __webpack_require__(/*! ../../dev/consoleoutput */ \"./src/aux/dev/consoleoutput.js\");\n\nconst bulmaBlock = (htmlContent) => {\n  if (!htmlContent) {\n    consoleOutput('error', null, '**bulmaBlock** => the \\'htmlContent\\' parameter must be non-null.');\n    return null;\n  }\n  let bl = document.createElement('div');\n  bl.setAttribute('class', 'block');\n  bl.appendChild(htmlContent);\n  return bl;\n}\n\nmodule.exports = bulmaBlock;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/block.js?");
 
 /***/ }),
 
@@ -33,9 +43,9 @@ eval("const bulmaBlock = (htmlContent) => {\n  if (!htmlContent) {\n    console.
 /*!*********************************!*\
   !*** ./src/aux/fe/bulma/box.js ***!
   \*********************************/
-/***/ ((module) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const bulmaBox = (elem, htmlContent) => {\n  if (!elem) {\n    elem = \"div\"\n  }\n  if (!htmlContent) {\n    console.error('**bulmaBox** => the \\'htmlContent\\' parameter must be non-null.');\n    return null;\n  }\n  let bx = document.createElement(elem);\n  bx.setAttribute('class','box');\n  bx.appendChild(htmlContent);\n  return bx;\n}\n\nmodule.exports = bulmaBox;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/box.js?");
+eval("const consoleOutput = __webpack_require__(/*! ../../dev/consoleoutput */ \"./src/aux/dev/consoleoutput.js\");\n\nconst bulmaBox = (elem, htmlContent) => {\n  if (!elem) {\n    elem = \"div\"\n  }\n  if (!htmlContent) {\n    consoleOutput('error', null, '**bulmaBox** => the \\'htmlContent\\' parameter must be non-null.');\n    return null;\n  }\n  let bx = document.createElement(elem);\n  bx.setAttribute('class', 'box');\n  bx.appendChild(htmlContent);\n  return bx;\n}\n\nmodule.exports = bulmaBox;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/box.js?");
 
 /***/ }),
 
@@ -43,9 +53,9 @@ eval("const bulmaBox = (elem, htmlContent) => {\n  if (!elem) {\n    elem = \"di
 /*!****************************************!*\
   !*** ./src/aux/fe/bulma/breadcrumb.js ***!
   \****************************************/
-/***/ ((module) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const bulmaBreadcrumb = (items) => {\n  if (!items) {\n    console.error('**bulmaBreadcrumb** => the parameter items must be non-null.');\n    return null;\n  }\n  if (typedef(items) !== 'Array') {\n    console.error('**bulmaBreadcrumb** => the parameter items must be of type array');\n    return null;\n  }\n  const bc = document.createElement('nav');\n  bc.setAttribute('class', 'breadcrumb');\n  bc.setAttribute('aria-label', 'breadcrumbs');\n  const ul = document.createElement('ul');\n  bc.appendChild(ul);\n  items.map(it => {\n    let li = document.createElement('li');\n    let a = document.createElement('a');\n    a.setAttribute('href', '#');\n    a.innerText = it;\n    li.appendChild(a);\n    ul.appendChild(li);\n  })\n  return bc;\n}\n\nmodule.exports = bulmaBreadcrumb;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/breadcrumb.js?");
+eval("const consoleOutput = __webpack_require__(/*! ../../dev/consoleoutput */ \"./src/aux/dev/consoleoutput.js\");\n\nconst bulmaBreadcrumb = (items) => {\n  if (!items) {\n    consoleOutput('error', null, '**bulmaBreadcrumb** => the parameter \\'items\\' must be non-null.');\n    return null;\n  }\n  if (typeof items !== 'Array') {\n    consoleOutput('error', null, '**bulmaBreadcrumb** => the parameter \\'items\\' must be of type array');\n    return null;\n  }\n  const bc = document.createElement('nav');\n  bc.setAttribute('class', 'breadcrumb');\n  bc.setAttribute('aria-label', 'breadcrumbs');\n  const ul = document.createElement('ul');\n  bc.appendChild(ul);\n  items.map(it => {\n    let li = document.createElement('li');\n    let a = document.createElement('a');\n    a.setAttribute('href', '#');\n    a.innerText = it;\n    li.appendChild(a);\n    ul.appendChild(li);\n  })\n  return bc;\n}\n\nmodule.exports = bulmaBreadcrumb;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/breadcrumb.js?");
 
 /***/ }),
 
@@ -63,9 +73,9 @@ eval("const bulmaBlock = __webpack_require__(/*! ./block */ \"./src/aux/fe/bulma
 /*!************************************!*\
   !*** ./src/aux/fe/bulma/button.js ***!
   \************************************/
-/***/ ((module) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const bulmaButton = (elem, text, classesArray) => {\n  if (!elem) {\n    elem = 'button';\n  }\n  const acceptedElems = ['a', 'button', 'input'];\n  if (!acceptedElems.includes(elem)) {\n    console.error('\\x1b[31m**bulmaButton** => the elem parameter must be \\'a\\', \\'button\\' or \\'input\\'.\\x1b[37m');\n    return null;\n  }\n  if (!text) {\n    console.error(\"\\x1b[31m**bulmaButton** => the parameter \\'text\\' must be non-null.\\x1b[37m\");\n    return null;\n  }\n  if (!classesArray) {\n    console.error(\"\\x1b[31m**bulmaButton** => the parameter \\'classesArray\\' must be non-null.\\x1b[37m\");\n    return null;\n  }\n  if (typeof classesArray !== 'Array') {\n    console.error(\"\\x1b[31m**bulmaButton** => the parameter \\'classesArray\\' must be of type Array.\\x1b[37m\");\n    return null;\n  }\n  const btn = document.createElement(elem);\n  btn.setAttribute('class', 'button')\n  classesArray.map(cl => {\n    btn.classList.add(`is-${cl}`);\n  })\n  btn.innerText = text;\n  return btn;\n}\n\nmodule.exports = bulmaButton;\n\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/button.js?");
+eval("const consoleOutput = __webpack_require__(/*! ../../dev/consoleoutput */ \"./src/aux/dev/consoleoutput.js\");\n\nconst bulmaButton = (elem, text, classesArray) => {\n  if (!elem) {\n    elem = 'button';\n  }\n  const acceptedElems = ['a', 'button', 'input'];\n  if (!acceptedElems.includes(elem)) {\n    consoleOutput('error', null, '**bulmaButton** => the elem parameter must be \\'a\\', \\'button\\' or \\'input\\'.');\n    return null;\n  }\n  if (!text) {\n    consoleOutput('error', null, '**bulmaButton** => the parameter \\'text\\' must be non-null.');\n    return null;\n  }\n  if (!classesArray) {\n    consoleOutput('error', null, '**bulmaButton** => the parameter \\'classesArray\\' must be non-null.');\n    return null;\n  }\n  if (typeof classesArray !== 'Array') {\n    consoleOutput('error',null,'**bulmaButton** => the parameter \\'classesArray\\' must be of type Array.');\n    return null;\n  }\n  const btn = document.createElement(elem);\n  btn.setAttribute('class', 'button')\n  classesArray.map(cl => {\n    btn.classList.add(`is-${cl}`);\n  })\n  btn.innerText = text;\n  return btn;\n}\n\nmodule.exports = bulmaButton;\n\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/button.js?");
 
 /***/ }),
 
@@ -123,9 +133,9 @@ eval("const bulmaContainer = (htmlcontent) => {\n  const cont = document.createE
 /*!**********************************!*\
   !*** ./src/aux/fe/bulma/hero.js ***!
   \**********************************/
-/***/ ((module) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const bulmaHero = (classesList, htmlContent) => {\n  const hero = document.createElement('section');\n  hero.setAttribute('class', 'hero');\n  classesList.map(cl => {\n    hero.classList.add(`is-${cl}`);\n  })\n  const heroBody = document.createElement('div');\n  heroBody.setAttribute('class', 'hero-body');\n  heroBody.appendChild(htmlContent);\n  hero.appendChild(heroBody);\n  return hero;\n}\n\nmodule.exports = bulmaHero;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/hero.js?");
+eval("const consoleOutput = __webpack_require__(/*! ../../dev/consoleoutput */ \"./src/aux/dev/consoleoutput.js\");\n\nconst bulmaHero = (classesList, htmlContent) => {\n  if (!classesList) {\n    consoleOutput('error', null, '**bulmaHero** => the parameter \\'classesList\\' nust be non-null;');\n    return null;\n  }\n  if (typeof classesList !== 'Array') {\n    consoleOutput('error', null, '**bulmaHero** => the parameter \\'classesList\\' must be of type array.');\n    return null;\n  }\n  if (!htmlContent) {\n    consoleOutput('error', null, '**bulmaHero** => the parameter \\'htmlContent\\' nust be non-null;');\n    return null;\n  }\n  const hero = document.createElement('section');\n  hero.setAttribute('class', 'hero');\n  classesList.map(cl => {\n    hero.classList.add(`is-${cl}`);\n  })\n  const heroBody = document.createElement('div');\n  heroBody.setAttribute('class', 'hero-body');\n  heroBody.appendChild(htmlContent);\n  hero.appendChild(heroBody);\n  return hero;\n}\n\nmodule.exports = bulmaHero;\n\n//# sourceURL=webpack://boilerplate/./src/aux/fe/bulma/hero.js?");
 
 /***/ }),
 
